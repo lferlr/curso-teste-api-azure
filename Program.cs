@@ -9,7 +9,8 @@ var connectionString = app.Configuration.GetConnectionString("DefaultConnection"
 app.MapGet("/", () => new
 {
   ConnectionString = connectionString,
-  Secrets = secrets
+  Secrets = secrets,
+  ApiUrl = app.Configuration.GetValue<string>("ApiUrl")
 });
 
 app.Run();
